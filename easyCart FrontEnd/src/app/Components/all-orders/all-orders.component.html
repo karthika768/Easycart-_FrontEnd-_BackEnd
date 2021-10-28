@@ -1,0 +1,48 @@
+<!-- <p>{{res}}</p> -->
+<table>
+    <tr *ngFor="let dat of res">
+        <span *ngFor="let data of dat.orderItems">
+
+            <!-- <td><span *ngFor="let data of dat">
+            <span>
+              {{data}}
+            </span>
+               </span></td> -->
+            <mat-card  (click)="viewOrderItem(data.orderItemId)">
+               
+                <mat-card-content><span class= "col-md-4"> OrderId</span><span  cals="col-md-8" style="position :relative; margin-left: 200px;">OD{{dat.orderId}}</span></mat-card-content>
+                <mat-card-content >
+                   
+                    <div class="row">
+                        <span>
+                            <span> <img mat-card-image src="{{data.product.image}}" alt="{{data.product.productName}}"
+                                    style="position :relative; width:400px;height:400px; margin-right: 300px;">
+                            </span>
+                            <span>
+                                <span
+                                    style="position :relative; margin-right: 300px;">{{data.product.productName}}</span>
+                                    
+                            </span>
+                            <br>
+                            <br>
+                            <span style="position :relative; margin-right: 300px;">{{data.product.sellerId.name}}
+
+                            </span>
+                        </span>
+                    </div>
+                    <!-- <td>{{dat.orderId}}</td><br> -->
+                    <!-- <td>{{dat.totalPrice}}</td><br> -->
+                </mat-card-content>
+
+                <!-- <td>
+                    <span>{{data.orderItemId}}</span>
+                    <span>{{data.quantity}}</span>
+                    <span>{{data.price}}</span>
+                   
+                    <span>{{data.product.sellerId.name}}</span>
+        </td> -->
+    
+            </mat-card>
+        </span>
+    </tr>
+</table>

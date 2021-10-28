@@ -1,0 +1,15 @@
+<mat-card><button class="btn btn-primary" routerLink="/home">Back</button></mat-card>
+
+<div class="container">
+    <h2>Notifications....</h2>
+    <div class="row"></div>
+    <span *ngFor="let dat of res">
+        <span *ngFor="let data of dat.order.orderItems">
+            <mat-card>
+                <mat-card-content style="background-color:dimgray;"> <b>{{dat.customer.name}} </b>{{dat.message}}
+                   <b> {{data.product.productName}} </b> on Date {{dat.order.createDate}}
+                </mat-card-content>
+            </mat-card>
+        </span>
+    </span>
+</div>

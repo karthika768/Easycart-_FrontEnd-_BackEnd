@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row" >
+        <!-- <div class = "col"></div> -->
+        <div class="col" style="margin:50px;">
+            <a routerLink = "/home">Home</a>
+            <mat-card>
+                <mat-card-content>
+                    <span class="col-md-4"> Order Item Id</span><span cals="col-md-8"
+                        style="position :relative; margin-left: 200px;">ODI{{res.orderItemId}}</span>
+                </mat-card-content>
+                <mat-card-content>
+                    <div class="row">
+
+                        <span>
+                            <span> <img mat-card-image src="{{res.product.image}}" alt="{{res.product.productName}}"
+                                    style="position :relative; width:400px;height:400px; margin-right: 300px;">
+                            </span>
+                            <!-- <span style="font-size: medium;">{{res.product.productName}}</span> -->
+                        </span>
+                        <span style="font-size: medium;">{{res.product.productName}}</span><br>
+                        <br>
+                        <span style="font-size: large;">{{res.price}}</span><br>
+                        <br>
+                        <br>
+                        <span style="font-size: small;">Description</span><br>
+                        <span style="font-size: medium;">{{res.product.description}}</span><br><br>
+                        <span>
+                            <span style="font-size: medium;">Quantity</span>
+                            <span
+                                style="font-size: medium; position :relative; margin-left: 200px;">{{res.quantity}}</span>
+                        </span>
+                        <br>
+                        <br>
+                        <span>
+                            <span style="font-size: medium;">Size</span>
+                            <span
+                                style="font-size: medium; position :relative; margin-left: 200px;">{{res.product.size}}</span>
+                        </span>
+                        <br>
+                        <br>
+                        <span>
+                            <span style="font-size: medium;">Color</span>
+                            <span
+                                style="font-size: medium; position :relative; margin-left: 200px;">{{res.product.color}}</span>
+                        </span>
+                        <br>
+                        <br>
+                        <mat-card-content>
+                            <span><span style="font-size: small;">seller</span><br>
+                                <span style="font-size: medium;">{{res.product.sellerId.name}}
+                                </span><br>
+                                <br>
+                                <span style="font-size: medium;">{{res.product.sellerId.cName}}
+                                </span>
+                            </span>
+                        </mat-card-content>
+                        
+
+
+                    </div>
+                </mat-card-content>
+
+            </mat-card>
+            <mat-card><button class="btn btn-primary" (click)="pdf(res.invoiceId)" >Invoice Download</button></mat-card>
+
+            <mat-card><button class="btn btn-primary" (click)="delete(res.orderItemId)"  routerLink = "/allOrder">Cancel Order</button></mat-card>
+
+             <mat-card><button class="btn btn-primary"  routerLink = "/allOrder">Back</button></mat-card>
+        </div>
+        <!-- <div class = "col"></div> -->
+    </div>
+</div>

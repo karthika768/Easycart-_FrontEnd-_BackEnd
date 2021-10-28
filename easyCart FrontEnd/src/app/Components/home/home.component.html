@@ -1,0 +1,46 @@
+<div class="container">
+<button class="btn btn-primary" (click)="AllOrder()">Your Orders</button>
+<br>
+<br>
+<mat-icon matBadge="{{this.count}}" matBadgeColor="warn"  (click)="viewNotifications()"> notifications</mat-icon>
+<!-- <matbadge="{{this.count}}" matbadgecolor="warn" ></matbadge> -->
+<div class="row">
+    <!-- <div class="col"></div> -->
+    <div style="width:50%; margin: 25px auto" >
+        <form [formGroup]="orderForm" style="position: relative;">
+
+            <div class="form-group">
+                <label for="name" class="form-label">Shipping Address</label>
+                <textarea class="form-control" id="shippingAddress" formControlName="shippingAddress" name="shippingAddress"
+                    rows="6"></textarea>
+                <div *ngIf="this.orderForm.get('shippingAddress')?.touched && f.shippingAddress.errors?.required" class="alert-danger">Can
+                    not be Empty
+                </div>
+                <!-- <div *ngIf="this.orderForm.controls['address'].errors?.pattern" class="error">Invalid Address </div> -->
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label for="name" class="form-label">Payment Type</label>
+                <select name="paymentType" class="form-control" id="paymentType" formControlName="paymentType"
+                    >
+                    <option selected>Select Payment type</option>
+                    <option value="COD">Cash On Delivery</option>
+                    <!-- <option value="2">Two</option>
+                    <option value="3">Three</option> -->
+                </select>
+                <div *ngIf="this.orderForm.get('paymentType')?.touched && f.paymentType.errors?.required" class="alert-danger">Can
+                    not be Empty
+                </div>
+                <div *ngIf="this.orderForm.controls['paymentType'].errors?.pattern" class="alert-danger">Invalid Payment Type
+                </div>
+                <br>
+            </div>
+
+            <button class="btn btn-primary" (click)="postOrder()">Place Order</button>
+            <!-- <button class="btn btn-primary" (click)="AllOrder()">Your Orders</button> -->
+        </form>
+    </div>
+    <!-- <div></div> -->
+</div>
+</div>

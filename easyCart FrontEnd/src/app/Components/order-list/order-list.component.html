@@ -1,0 +1,52 @@
+<!-- <mat-card>{{orderid}}</mat-card>
+<mat-card>{{totalPrice}}</mat-card>
+<mat-card>{{orderItems}}</mat-card> -->
+<div class="container">
+    <div>
+
+        <span *ngFor="let dat of res">
+            <mat-card><span>Order Id</span><span style="margin-left: 300px;"> {{dat.orderId}}</span></mat-card>
+
+            <span *ngFor="let data of dat.orderItems">
+                <mat-card style="margin:5px ;">
+                    <mat-card-title>
+                        <span>{{data.product.productName}}</span>
+                    </mat-card-title><br><br>
+
+                    <!-- <img mat-card-image src>{{data.product.image}} -->
+                    <img mat-card-image src="{{data.product.image}}" alt="{{data.product.productName}}"
+                        style="position :relative; width:400px;height:400px; margin-left: 300px;">
+                    <br>
+                    <br>
+                    <br>
+
+                    <mat-card-subtitle>
+                        <span>{{data.price}}</span>
+                    </mat-card-subtitle>
+                    <br>
+                    <br>
+
+                    <mat-card-content>
+                        <span>{{data.product.description}}</span><br><br>
+                        <span>Quantity </span><span style="margin-left: 300px;">{{data.quantity}}</span>
+                    </mat-card-content>
+
+                    <!-- <mat-card-content>
+                       
+                    </mat-card-content> -->
+                </mat-card>
+            </span>
+            <mat-card><span>Total Price </span><span style="margin-left: 300px;"> {{dat.totalPrice}}</span></mat-card>
+            <mat-card><span>shipping Address </span><span style="margin-left: 250px;"> {{dat.shippingAddress}}</span>
+            </mat-card>
+            <mat-card><span>Payment Type </span><span style="margin-left: 300px;">{{dat.paymentType}}</span></mat-card>
+             <mat-card><button class="btn btn-primary" (click)="delete(dat.orderId)"  routerLink = "/home">Cancel Order</button></mat-card>
+
+             <mat-card><button class="btn btn-primary"  routerLink = "/home">Back</button></mat-card>
+
+        </span>
+
+    </div>
+
+
+</div>
